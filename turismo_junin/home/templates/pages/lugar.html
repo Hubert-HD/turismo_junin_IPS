@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ nombre }}{% endblock %}
+{% block content %}
+<div class="slide">
+  <img class="slide__fondo" src="{{ imagen }}" alt="{{ imagen }}">
+  <h2 class="slide__titulo">{{ nombre }}</h2>
+  <h3 class="slide__subtitulo">{{ subtitulo }}</h3>
+  <div class="slide__datos">
+    <div class="slide__datos__corazon corazon">
+      <span class="corazon__icon"><i class="fas fa-heart"></i></span>
+      <span class="corazon__numero">{{ corazones }}</span>
+    </div>
+    <div class="slide__datos__ubicacion">
+      <span><i class="fas fa-map-marker-alt"></i></span>
+      <span>{{ provincia }}</span>
+      <span class="slide__datos__ubicacion__circulo"><i class="fas fa-circle"></i></span>
+      <span>{{ distrito }}</span>
+    </div>
+  </div>
+</div>
+
+<div class="etiqueta-main">
+  <span class="etiqueta-main__icono"><i class="fas fa-tag"></i></span>
+  <span class="etiqueta-main__clase">{{ categoria }}</span>
+</div>
+
+{% for parrafo in parrafos %}
+  <p class="parrafo">{{ parrafo }}</p>
+{% endfor %}
+
+<div class="mapa-container">
+  <div id="map" class="map">
+  </div>
+</div>
+
+<h4 class="recomendados__titulo">Recomendados para ti</h4>
+<div class="recomendados">
+  <span class="recomendados__button--izquierda"><i class="fas fa-chevron-left"></i></span>
+  <div class="recomendados__galeria">
+    {% for card in recomendados %}
+      <div class="card">
+        <div class="card__imagen">
+          <img class="card__imagen__img" src="{{ card.imagen }}" alt="">
+          <h5 class="card__imagen__titulo">{{ card.nombre }}</h5>
+          <p class="card__imagen__lugar">{{ card.provincia }}</p>
+        </div>
+        <div class="card__descripcion">
+          <div class="etiqueta">
+            <span class="etiqueta__icono"><i class="fas fa-tag"></i></span>
+            <span class="etiqueta__clase">{{ card.categoria }}</span>
+          </div>
+          <div class="corazon">
+            <span class="corazon__icon"><i class="fas fa-heart"></i></span>
+            <span class="corazon__numero">{{ card.corazones }}</span>
+          </div>
+          <a class="flecha" href="../../destinos/{{ card.nombre }}/"><i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <span class="recomendados__button--derecha"><i class="fas fa-chevron-right"></i></span>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<script>
+  activarRecomendaciones();
+  function iniciarMap(){
+    let nombre = document.querySelector(".slide__titulo").innerHTML;
+    fetch(`../../api/coordenadas?nombre=${nombre}`)
+    .then(response => response.json())
+    .then(data => {
+      let coord = {lat: data.latitud, lng: data.longuitud};
+      let map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: coord
+      });
+      let marker = new google.maps.Marker({
+        position: coord,
+        map: map,
+        title: 'Mapa Cargado!'
+      });
+    });
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMk5chJWP3Ly5JpJkzWAfDn_x1a2je4no&callback=iniciarMap"></script>
+{% endblock %}

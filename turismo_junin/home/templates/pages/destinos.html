@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Destinos{% endblock %}
+{% block enlace_destino %} navbar__menu__enlace--active{% endblock %}
+{% block content %}
+
+<div class="slide">
+  <img class="slide__fondo" src="{% static 'img/destinos.png' %}" alt="destinos.png">
+  <h2 class="slide__titulo">Destinos</h2>
+  <h3 class="slide__subtitulo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</h3>
+</div>
+
+<div class="filtro--destinos">
+  <div class="filtro--destinos__localizacion">
+    <span class="filtro--destinos__etiqueta">Por localización:</span>
+    <div class="selection">
+      <div class="selection__box">
+        <span id="provincia" class="selection__box__content selection__box__content--void">Provincia</span>
+        <span class="selection__box__icon selection__box__icon--down"><i class="fas fa-angle-down"></i></span>
+      </div>
+      <div class="selection__option selection__option--close">
+        {% for provincia in provincias %}
+          <div class="selection__option__item" onclick="generarDistritos('{{provincia}}')">{{provincia}}</div>
+        {% endfor %}
+      </div>
+    </div>
+    <div id="distritoSelection" class="selection selection--disabled">
+      <div class="selection__box">
+        <span id="distrito" class="selection__box__content selection__box__content--void">Distrito</span>
+        <span class="selection__box__icon selection__box__icon--down"><i class="fas fa-angle-down"></i></span>
+      </div>
+      <div id="distritoList" class="selection__option selection__option--close"></div>
+    </div>
+  </div>
+
+  <div class="filtro--destinos__categoria">
+    <span class="filtro--destinos__etiqueta">Por categoria:</span>
+    <div class="selection">
+      <div class="selection__box">
+        <span id="categoria" class="selection__box__content selection__box__content--void">Categoria</span>
+        <span class="selection__box__icon selection__box__icon--down"><i class="fas fa-angle-down"></i></span>
+      </div>
+      <div class="selection__option selection__option--close">
+        {% for categoria in categorias %}
+          <div class="selection__option__item">{{categoria}}</div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <a class="filtro--destinos__button" href="javascript:;" onclick="consultarLugares()">Explorar</a>
+</div>
+<p id="error" class="filtro__error">*Complete al menos un campo antes de explorar</p>
+
+<div id="resultadosLugares">
+  <h4 class="recomendados__titulo">Sitios naturales recomendados</h4>
+  <div class="recomendados">
+    <div class="recomendados__galeria">
+      {% for card in recomendados.naturales %}
+        <div class="card">
+          <div class="card__imagen">
+            <img class="card__imagen__img" src="{{ card.imagen }}" alt="">
+            <h5 class="card__imagen__titulo">{{ card.nombre }}</h5>
+            <p class="card__imagen__lugar">{{ card.provincia }}</p>
+          </div>
+          <div class="card__descripcion">
+            <div class="etiqueta">
+              <span class="etiqueta__icono"><i class="fas fa-tag"></i></span>
+              <span class="etiqueta__clase">{{ card.categoria }}</span>
+            </div>
+            <div class="corazon corazon--desactive">
+              <span class="corazon__icon"><i class="fas fa-heart"></i><i class="far fa-heart"></i></span>
+              <span class="corazon__numero">{{ card.corazones }}</span>
+            </div>
+            <a class="flecha" href="/destinos/{{ card.nombre }}/"><i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <h4 class="recomendados__titulo">Sitios culturales recomendados</h4>
+  <div class="recomendados">
+    <div class="recomendados__galeria">
+      {% for card in recomendados.culturales %}
+        <div class="card">
+          <div class="card__imagen">
+            <img class="card__imagen__img" src="{{ card.imagen }}" alt="">
+            <h5 class="card__imagen__titulo">{{ card.nombre }}</h5>
+            <p class="card__imagen__lugar">{{ card.provincia }}</p>
+          </div>
+          <div class="card__descripcion">
+            <div class="etiqueta">
+              <span class="etiqueta__icono"><i class="fas fa-tag"></i></span>
+              <span class="etiqueta__clase">{{ card.categoria }}</span>
+            </div>
+            <div class="corazon corazon--desactive">
+              <span class="corazon__icon"><i class="fas fa-heart"></i><i class="far fa-heart"></i></span>
+              <span class="corazon__numero">{{ card.corazones }}</span>
+            </div>
+            <a class="flecha" href="/destinos/{{ card.nombre }}/"><i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <h4 class="recomendados__titulo">Realizaciones contemporaneas recomendados</h4>
+  <div class="recomendados">
+    <div class="recomendados__galeria">
+      {% for card in recomendados.realizaciones %}
+        <div class="card">
+          <div class="card__imagen">
+            <img class="card__imagen__img" src="{{ card.imagen }}" alt="">
+            <h5 class="card__imagen__titulo">{{ card.nombre }}</h5>
+            <p class="card__imagen__lugar">{{ card.provincia }}</p>
+          </div>
+          <div class="card__descripcion">
+            <div class="etiqueta">
+              <span class="etiqueta__icono"><i class="fas fa-tag"></i></span>
+              <span class="etiqueta__clase">{{ card.categoria }}</span>
+            </div>
+            <div class="corazon corazon--desactive">
+              <span class="corazon__icon"><i class="fas fa-heart"></i><i class="far fa-heart"></i></span>
+              <span class="corazon__numero">{{ card.corazones }}</span>
+            </div>
+            <a class="flecha" href="/destinos/{{ card.nombre }}/"><i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    activarAnimacionMenusDesplegables();
+  </script>
+{% endblock %}
