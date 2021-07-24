@@ -31,8 +31,9 @@ class Recurso(models.Model):
     id = models.AutoField(primary_key = True)
     nombre = models.CharField(max_length=255, blank=False, null=False)
     image_URL = models.URLField(blank=True)
-    subtitulo = models.CharField(max_length=255, blank=False, null=False)
-    descripcion = models.TextField(max_length=255, blank=True, null=True)
+    subtitulo = models.CharField(max_length=400, blank=False, null=False)
+    descripcion = models.TextField(max_length=1000, blank=True, null=True)
+    puntuacion = models.BigIntegerField(default = 0, blank=False, null=False)
     distrito_id = models.ForeignKey(Distrito, on_delete=models.CASCADE, blank=False, null=False)
     categoria_id = models.ForeignKey(Categoria, on_delete=models.CASCADE, blank=False, null=False)
 
@@ -48,4 +49,5 @@ class Coordenada(models.Model):
 class Favorito(models.Model):
     id = models.AutoField(primary_key = True)
     usuario_id = models.ForeignKey(SocialAccount, on_delete=models.CASCADE, blank=False, null=False)
-    recurso_id = models.ForeignKey(Recurso, on_delete=models.CASCADE, blank=False, null=False)
+    recurso_id = models.ForeignKey(Recurso, related_name="favoritos", on_delete=models.CASCADE, blank=False, null=False)
+    is_active = BooleanField()

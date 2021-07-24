@@ -73,7 +73,7 @@ function generarDistritos(provincia){
     }
   }
   selection.classList.remove("selection--disabled");
-  fetch(`../api/distritos?provincia=${provincia}`)
+  fetch(`/api/distritos?provincia=${provincia}`)
   .then(response => response.json())
   .then(data => {
     let distritoArray = data;
@@ -99,11 +99,11 @@ function generarDistritos(provincia){
 }
 
 // Devuelve en texto plano el HTML de una card
-function generarCardHTML(link, nombre, provincia, categoria, corazones){
+function generarCardHTML(imagen, nombre, provincia, categoria, corazones, marcado){
   let cardsHTML = `
     <div class="card">
       <div class="card__imagen">
-        <img class="card__imagen__img" src=${link} alt="${nombre}.png">
+        <img class="card__imagen__img" src="${imagen}" alt="${nombre}">
         <h5 class="card__imagen__titulo">${nombre}</h5>
         <p class="card__imagen__lugar">${provincia}</p>
       </div>
@@ -112,8 +112,8 @@ function generarCardHTML(link, nombre, provincia, categoria, corazones){
           <span class="etiqueta__icono"><i class="fas fa-tag"></i></span>
           <span class="etiqueta__clase">${categoria}</span>
         </div>
-        <div class="corazon corazon--desactive">
-          <span class="corazon__icon"><i class="fas fa-heart"></i><i class="far fa-heart"></i></span>
+        <div class="corazon ${(marcado) ? 'corazon--active' : 'corazon--desactive'}">
+          <span class="corazon__icon" onclick="addFavoritos(event, '${nombre}')"><i class="fas fa-heart"></i><i class="far fa-heart"></i></span>
           <span class="corazon__numero">${corazones}</span>
         </div>
         <a class="flecha" href="/destinos/${nombre}/"><i class="fas fa-arrow-right"></i></a>
@@ -121,69 +121,6 @@ function generarCardHTML(link, nombre, provincia, categoria, corazones){
     </div>
     `;
   return cardsHTML;
-}
-
-// Obtiene los resultados de la consulta de recursos turisticos y los muestra en el navegador
-function consultarLugares(){
-  let provincia = document.getElementById("provincia").innerText;
-  let distrito = document.getElementById("distrito").innerText;
-  let categoria = document.getElementById("categoria").innerText;
-  if(provincia == "Provincia" && distrito == "Distrito" && categoria == "Categoria"){
-    document.getElementById("error").style.display = "block";
-  }
-  else{
-    document.getElementById("error").style.display = "none";
-    let resultado = document.getElementById("resultadosLugares");
-    fetch(`../api/destinos?provincia=${provincia}&distrito=${distrito}&categoria=${categoria}`)
-    .then(response => response.json())
-    .then(data => {
-      console.log(data);
-      let resultadoHTML = "";
-      let cards = data;
-      if(cards.length == 0){
-        resultadoHTML = `
-        <div class="resultados">
-          <h4 class="resultados__titulo">Resultados</h4>
-          <h4 class="resultados__respuesta">No se encontraron coincidencias</h4>
-        </div>`;
-        fetch(`../api/recomendaciones?provincia=${provincia}&distrito=${distrito}&categoria=${categoria}`)
-        .then(response => response.json())
-        .then(data => {
-          let cards = data;
-          let cardsHTML = "";
-          cards.forEach(({link, nombre, provincia, categoria, corazones}) => {
-            cardsHTML += generarCardHTML(link, nombre, provincia, categoria, corazones);
-          });
-          resultadoHTML += `
-          <h4 class="recomendados__titulo">Recomendados para ti</h4>
-          <div class="recomendados">
-            <span class="recomendados__button--izquierda"><i class="fas fa-chevron-left"></i></span>
-            <div class="recomendados__galeria">
-              ${cardsHTML}
-            </div>
-            <span class="recomendados__button--derecha"><i class="fas fa-chevron-right"></i></span>
-          </div>`;
-          resultado.innerHTML = resultadoHTML;
-          activarRecomendaciones();
-        });
-      }
-      else{
-        let cardsHTML = "";
-        cards.forEach(({link, nombre, provincia, categoria, corazones}) => {
-          cardsHTML += generarCardHTML(link, nombre, provincia, categoria, corazones);
-        });
-        resultadoHTML += `
-        <div class="resultados">
-          <h4 class="resultados__titulo">Resultados</h4>
-          <div class="resultados__galeria">
-            ${cardsHTML}
-          </div>
-        </div>
-        `;
-      }
-      resultado.innerHTML = resultadoHTML;
-    });
-  }
 }
 
 // Añade los botones para desplazarse en los recursos turisticos recomendados
@@ -243,7 +180,7 @@ function activarModal(){
   });
 }
 
-function activarCorazones(){
+/* function activarCorazones(){
   let corazonesArray = document.querySelectorAll(".corazon--desactive");
   let modal = document.getElementById("modal-login");
 
@@ -254,8 +191,74 @@ function activarCorazones(){
         modal.classList.replace("modal--desactive", "modal--active")
     });
   });
+} */
+
+function addFavoritos(event, nombre){
+  const QUITAR = "QUITAR";
+  const CAMBIAR_AÑADIR = "CAMBIAR_AÑADIR";
+  const CREAR_AÑADIR = "CREAR_AÑADIR";
+  const SIN_PERMISOS = "SIN_PERMISOS";
+
+  let corazon = event.currentTarget;
+  let corazon_count = corazon.parentNode.querySelector(".corazon__numero");
+  fetch(`/api/add?nombre=${nombre}`)
+    .then(response => response.json())
+    .then(data => {
+      switch (data.status) {
+        case QUITAR:
+          if(corazon.parentNode.classList.contains("corazon--active")){
+            corazon.parentNode.classList.replace("corazon--active", "corazon--desactive")
+            corazon_count.innerText = data.corazones;
+          }
+          break;
+        case CAMBIAR_AÑADIR:
+        case CREAR_AÑADIR:
+          if(corazon.parentNode.classList.contains("corazon--desactive")){
+            corazon.parentNode.classList.replace("corazon--desactive", "corazon--active")
+            corazon_count.innerText = data.corazones;
+          }
+          break;
+        case SIN_PERMISOS:
+          let modal = document.getElementById("modal-login");
+          if(modal.classList.contains("modal--desactive"))
+            modal.classList.replace("modal--desactive", "modal--active")
+          break;
+        default:
+          console.log("No es una opcion válida")
+          break;
+      }
+      console.log(data.status)
+      pedirCards && pedirCards()
+    })
+  /* if(corazon.parentNode.classList.contains("corazon--active")){
+    corazon.parentNode.classList.replace("corazon--active", "corazon--desactive")
+    corazon_count.innerText = parseInt(corazon_count.innerText) - 1;
+  }
+  else{
+    corazon.parentNode.classList.replace("corazon--desactive", "corazon--active")
+    corazon_count.innerText = parseInt(corazon_count.innerText) + 1;
+  } */
 }
 
-function añadirFavorito(){
-  alert("se añadio")
+function pedirRecomendaciones(resultado){
+  fetch(`/api/recomendaciones?provincia=${provincia}&distrito=${distrito}&categoria=${categoria}`)
+    .then(response => response.json())
+    .then(data => {
+      let cards = data;
+      let cardsHTML = "";
+      cards.forEach(({link, nombre, provincia, categoria, corazon}) => {
+        cardsHTML += generarCardHTML(link, nombre, provincia, categoria, corazon.contador, corazon.marcado);
+      });
+      resultadoHTML = `
+      <h4 class="recomendados__titulo">Recomendados para ti</h4>
+      <div class="recomendados">
+        <span class="recomendados__button--izquierda"><i class="fas fa-chevron-left"></i></span>
+        <div class="recomendados__galeria">
+          ${cardsHTML}
+        </div>
+        <span class="recomendados__button--derecha"><i class="fas fa-chevron-right"></i></span>
+      </div>`;
+      resultado.innerHTML = resultadoHTML;
+      activarRecomendaciones();
+    });
 }

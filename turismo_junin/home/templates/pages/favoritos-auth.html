@@ -21,7 +21,7 @@
         </div>
         <div class="selection__option selection__option--close">
           {% for provincia in provincias %}
-            <div class="selection__option__item" onclick="generarDistritos('{{provincia}}')">{{provincia}}</div>
+            <div class="selection__option__item" onclick="generarDistritos('{{provincia}}')">{{provincia.nombre}}</div>
           {% endfor %}
         </div>
       </div>
@@ -41,16 +41,16 @@
     {% for categoria in categorias.tangibles %}
       <div class="checklist favoritos__filtro__checklist">
         <label class="checklist__marca checklist__marca--desactive" for="{{categoria}}"></label>
-        <input class="checklist__input" type="radio" id="{{categoria}}" name="categoria" value="{{categoria}}">
-        <label class="checklist__etiqueta" for="{{categoria}}">{{categoria}}</label>
+        <input class="checklist__input" type="radio" id="{{categoria.nombre}}" name="categoria" value="{{categoria.nombre}}">
+        <label class="checklist__etiqueta" for="{{categoria.nombre}}">{{categoria.nombre}}</label>
       </div>
     {% endfor %}
     <span class="favoritos__filtro__etiqueta">Cultura</span>
     {% for categoria in categorias.no_tangibles %}
       <div class="checklist favoritos__filtro__checklist">
         <label class="checklist__marca checklist__marca--desactive" for="{{categoria}}"></label>
-        <input class="checklist__input" type="radio" id="{{categoria}}" name="categoria" value="{{categoria}}">
-        <label class="checklist__etiqueta" for="{{categoria}}">{{categoria}}</label>
+        <input class="checklist__input" type="radio" id="{{categoria.nombre}}" name="categoria" value="{{categoria.nombre}}">
+        <label class="checklist__etiqueta" for="{{categoria.nombre}}">{{categoria.nombre}}</label>
       </div>
     {% endfor %}
     <a class="filtro--destinos__button" href="javascript:;" onclick="pedirCards()">Explorar</a>
@@ -58,10 +58,8 @@
   <div class="favoritos__resultado">
 
     <h3 class="favoritos__resultado__titulo">Resultados</h3>
-    <div class="favoritos__resultado__galeria">
-    </div>
-    <div class="paginacion">
-    </div>
+    <div class="favoritos__resultado__galeria"> </div>
+    <div class="paginacion"> </div>
   </div>
 </div>
 
@@ -81,8 +79,8 @@
         cardGalery = document.querySelector(".favoritos__resultado__galeria");
         cardsHTML = "";
         for (let i = (page - 1)*limiteCardsPage; i < dataCard.length && i < (page)*limiteCardsPage; i++) {
-          let {link, nombre, provincia, categoria, corazones} = dataCard[i];
-          cardsHTML += generarCardHTML(link, nombre, provincia, categoria, corazones);
+          let {link, nombre, provincia, categoria, corazon} = dataCard[i];
+          cardsHTML += generarCardHTML(link, nombre, provincia, categoria, corazon.contador, corazon.marcado);
         }
         cardGalery.innerHTML = cardsHTML;
       }
@@ -161,7 +159,7 @@
         .then(data => {
           if(data.length > 0){
             dataCard = data;
-            numPage = parseInt(dataCard.length / limiteCardsPage + 1);
+            numPage = Math.ceil(dataCard.length / limiteCardsPage);
             currentPage = 1;
             mostrarPageCards(currentPage);
             if(numPage > 1){
@@ -169,10 +167,16 @@
               paginador.innerHTML = generarButtonsPageHTML(currentPage);
               activarButtonsPage();
             }
+            else{
+              paginador = document.querySelector(".paginacion");
+              paginador.innerHTML = "";
+            }
           }
           else{
             cardGalery = document.querySelector(".favoritos__resultado__galeria");
+            paginador = document.querySelector(".paginacion");
             cardGalery.innerHTML = '<h3 class="respuesta">No se encontraron coincidencias</h3>';
+            paginador.innerHTML = "";
           }
         })
     }

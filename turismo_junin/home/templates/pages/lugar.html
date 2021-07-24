@@ -4,31 +4,30 @@
 {% block title %}{{ nombre }}{% endblock %}
 {% block content %}
 <div class="slide">
-  <img class="slide__fondo" src="{{ imagen }}" alt="{{ imagen }}">
-  <h2 class="slide__titulo">{{ nombre }}</h2>
-  <h3 class="slide__subtitulo">{{ subtitulo }}</h3>
+  <img class="slide__fondo" src="{{ recurso.image_URL }}" alt="{{ recurso.nombre }}">
+  <h2 class="slide__titulo">{{ recurso.nombre }}</h2>
+  <h3 class="slide__subtitulo">{{ recurso.subtitulo }}</h3>
   <div class="slide__datos">
-    <div class="slide__datos__corazon corazon">
-      <span class="corazon__icon"><i class="fas fa-heart"></i></span>
-      <span class="corazon__numero">{{ corazones }}</span>
+    <div class="slide__datos__corazon corazon {% if recurso.marcado %} corazon--active {% else %} corazon--desactive {% endif %}">
+      <span class="corazon__icon" onclick="addFavoritos(event, '{{ recurso.nombre }}')"><i class="fas fa-heart"></i><i class="far fa-heart"></i></span>
+      <span class="corazon__numero">{{ recurso.corazones }}</span>
     </div>
     <div class="slide__datos__ubicacion">
       <span><i class="fas fa-map-marker-alt"></i></span>
-      <span>{{ provincia }}</span>
+      <span>{{ recurso.provincia }}</span>
       <span class="slide__datos__ubicacion__circulo"><i class="fas fa-circle"></i></span>
-      <span>{{ distrito }}</span>
+      <span>{{ recurso.distrito }}</span>
     </div>
   </div>
 </div>
 
 <div class="etiqueta-main">
   <span class="etiqueta-main__icono"><i class="fas fa-tag"></i></span>
-  <span class="etiqueta-main__clase">{{ categoria }}</span>
+  <span class="etiqueta-main__clase">{{ recurso.categoria }}</span>
 </div>
 
-{% for parrafo in parrafos %}
-  <p class="parrafo">{{ parrafo }}</p>
-{% endfor %}
+
+<p class="parrafo">{{ recurso.descripcion }}</p>
 
 <div class="mapa-container">
   <div id="map" class="map">
@@ -42,7 +41,7 @@
     {% for card in recomendados %}
       <div class="card">
         <div class="card__imagen">
-          <img class="card__imagen__img" src="{{ card.imagen }}" alt="">
+          <img class="card__imagen__img" src="{{ card.image }}" alt="{{ card.nombre }}">
           <h5 class="card__imagen__titulo">{{ card.nombre }}</h5>
           <p class="card__imagen__lugar">{{ card.provincia }}</p>
         </div>
@@ -51,11 +50,11 @@
             <span class="etiqueta__icono"><i class="fas fa-tag"></i></span>
             <span class="etiqueta__clase">{{ card.categoria }}</span>
           </div>
-          <div class="corazon">
-            <span class="corazon__icon"><i class="fas fa-heart"></i></span>
-            <span class="corazon__numero">{{ card.corazones }}</span>
+            <div class="corazon {% if card.corazon.marcado %} corazon--active {% else %} corazon--desactive {% endif %}">
+            <span class="corazon__icon" onclick="addFavoritos(event, '{{ card.nombre }}')"><i class="fas fa-heart"></i><i class="far fa-heart"></i></span>
+            <span class="corazon__numero">{{ card.corazon.contador }}</span>
           </div>
-          <a class="flecha" href="../../destinos/{{ card.nombre }}/"><i class="fas fa-arrow-right"></i></a>
+          <a class="flecha" href="/destinos/{{ card.nombre }}/"><i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
     {% endfor %}
