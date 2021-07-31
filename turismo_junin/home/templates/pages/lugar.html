@@ -111,6 +111,7 @@
     let formulario = document.getElementById("calificacion-formulario");
     let formData = new FormData(formulario);
     let nombre = document.querySelector(".slide__titulo").innerHTML;
+    let formMemo = document.getElementById("calificacion-formulario").innerHTML;
 
     document.getElementById("calificacion-formulario").innerHTML = `
     <h4 class="calificacion__titulo">Actualizando ...</h4>
@@ -123,9 +124,11 @@
           let modal = document.getElementById("modal-login");
           if(modal.classList.contains("modal--desactive"))
             modal.classList.replace("modal--desactive", "modal--active")
+          document.getElementById("calificacion").style.display = "grid";
+          document.getElementById("calificacion-formulario").style.display = "none";
+          document.getElementById("calificacion-formulario").innerHTML = formMemo;
         }
         if (data.successful) {
-          console.log(data.successful.message);
           generarCalificacion();
         }
       });
@@ -344,7 +347,6 @@
         console.log(data);
       }
       else{
-        console.log(data);
         comentarioHTML = generarComentarios(data.cant_comentarios, data.comentarios);
         if(pagina == 1)
           document.getElementById("comentarios-list").innerHTML = comentarioHTML;

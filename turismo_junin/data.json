@@ -1,9 +1,9 @@
 {
     "categorias": [
         "Sitios Naturales",
-        "Manifestaciones Culturales",
-        "Acontecimientos Programados",
-        "Realizaciones Tecnicas, Cientificas Y Artististicas Contemporaneas",
+        "Sitios Culturales",
+        "Acontecimientos y Eventos",
+        "Realizaciones Contemporaneas",
         "Folclore"
     ],
     "provincias": [
@@ -131,7 +131,7 @@
         },
         {
             "nombre": "Estaci\u00f3n Ferroviaria De Chilca",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "Chilca"
@@ -146,7 +146,7 @@
         },
         {
             "nombre": "Feria Ganadera De Cuasimodo",
-            "categoria": "Acontecimientos Programados",
+            "categoria": "Acontecimientos y Eventos",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "Chilca"
@@ -161,7 +161,7 @@
         },
         {
             "nombre": "Chongos Alto",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "Chongos Alto"
@@ -176,7 +176,7 @@
         },
         {
             "nombre": "Cochas Chico",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "El Tambo"
@@ -191,7 +191,7 @@
         },
         {
             "nombre": "Cochas Grande",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "El Tambo"
@@ -206,7 +206,7 @@
         },
         {
             "nombre": "Complejo Recreacional Bosque Dorado",
-            "categoria": "Realizaciones Tecnicas, Cientificas Y Artististicas Contemporaneas",
+            "categoria": "Realizaciones Contemporaneas",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "El Tambo"
@@ -221,7 +221,7 @@
         },
         {
             "nombre": "Cruz De La Paz De Achkamarka",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "El Tambo"
@@ -236,7 +236,7 @@
         },
         {
             "nombre": "Museo Salesiano",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "El Tambo"
@@ -251,7 +251,7 @@
         },
         {
             "nombre": "Pueblo De Hualhuas",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "Hualhuas"
@@ -266,7 +266,7 @@
         },
         {
             "nombre": "Museo De Sitio De Wariwilka",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "Huanc\u00e1n"
@@ -281,7 +281,7 @@
         },
         {
             "nombre": "Santuario De Wariwilka",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "Huanc\u00e1n"
@@ -296,7 +296,7 @@
         },
         {
             "nombre": "Calle Real - Capaq",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "Huancayo"
@@ -311,7 +311,7 @@
         },
         {
             "nombre": "Capilla De La Merced",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "Huancayo"
@@ -326,7 +326,7 @@
         },
         {
             "nombre": "Capilla Del Cerrito De La Libertad",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "Huancayo"
@@ -356,7 +356,7 @@
         },
         {
             "nombre": "Catedral De Huancayo",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "Huancayo"
@@ -371,7 +371,7 @@
         },
         {
             "nombre": "Cerrito De La Libertad",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "Huancayo"
@@ -431,7 +431,7 @@
         },
         {
             "nombre": "Parque De La Identidad Wanka",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "Huancayo"
@@ -446,7 +446,7 @@
         },
         {
             "nombre": "Plaza De La Constitucion",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "Huancayo"
@@ -461,7 +461,7 @@
         },
         {
             "nombre": "Plaza De Huamanmarca",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "Huancayo"
@@ -476,7 +476,7 @@
         },
         {
             "nombre": "Fiesta Del Tayta Nino (chinchilpos Y Gamonales)",
-            "categoria": "Acontecimientos Programados",
+            "categoria": "Acontecimientos y Eventos",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "Huayucachi"
@@ -491,7 +491,7 @@
         },
         {
             "nombre": "Plaza Principal De Huayucachi",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "Huayucachi"
@@ -506,7 +506,7 @@
         },
         {
             "nombre": "Iglesia Matriz De San Jeronimo De Tunan",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "San Jer\u00f3nimo de Tun\u00e1n"
@@ -521,7 +521,7 @@
         },
         {
             "nombre": "Pueblo De San Jeronimo De Tunan",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "San Jer\u00f3nimo de Tun\u00e1n"
@@ -536,7 +536,7 @@
         },
         {
             "nombre": "Mirador De Pucara",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "Pucara"
@@ -551,7 +551,7 @@
         },
         {
             "nombre": "Pueblo De Pucara",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "Pucar\u00e1"
@@ -566,7 +566,7 @@
         },
         {
             "nombre": "Piscigranja La Caba\u00f1a",
-            "categoria": "Realizaciones Tecnicas, Cientificas Y Artististicas Contemporaneas",
+            "categoria": "Realizaciones Contemporaneas",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "Sapallanga"
@@ -581,7 +581,7 @@
         },
         {
             "nombre": "Iglesia Matriz De Santo Domingo De Guzman",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "Sicaya"
@@ -596,7 +596,7 @@
         },
         {
             "nombre": "Pueblo De Sicaya",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "Sicaya"
@@ -611,7 +611,7 @@
         },
         {
             "nombre": "Cecosan - Mayopampa De Viques",
-            "categoria": "Realizaciones Tecnicas, Cientificas Y Artististicas Contemporaneas",
+            "categoria": "Realizaciones Contemporaneas",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "Viques"
@@ -656,7 +656,7 @@
         },
         {
             "nombre": "Pueblo De Viques",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Huancayo",
                 "distrito": "Viques"
@@ -701,7 +701,7 @@
         },
         {
             "nombre": "Pueblo De Aco",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Concepci\u00f3n",
                 "distrito": "Aco"
@@ -716,7 +716,7 @@
         },
         {
             "nombre": "Restos Arqueologicos De Coto Coto",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Concepci\u00f3n",
                 "distrito": "Aco"
@@ -731,7 +731,7 @@
         },
         {
             "nombre": "Casa Ugarte Leon",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Concepci\u00f3n",
                 "distrito": "Concepci\u00f3n"
@@ -746,7 +746,7 @@
         },
         {
             "nombre": "Iglesia De Alayo",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Concepci\u00f3n",
                 "distrito": "Concepci\u00f3n"
@@ -776,7 +776,7 @@
         },
         {
             "nombre": "Iglesia Matriz De Concepcion",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Concepci\u00f3n",
                 "distrito": "Concepci\u00f3n"
@@ -791,7 +791,7 @@
         },
         {
             "nombre": "Paseo De Los Heroes",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Concepci\u00f3n",
                 "distrito": "Concepci\u00f3n"
@@ -806,7 +806,7 @@
         },
         {
             "nombre": "Plaza De Armas De Concepcion",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Concepci\u00f3n",
                 "distrito": "Concepci\u00f3n"
@@ -821,7 +821,7 @@
         },
         {
             "nombre": "Mirador Estatua De La Virgen De La Inmaculada Concepcion En Piedra Parada",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Concepci\u00f3n",
                 "distrito": "Concepci\u00f3n"
@@ -836,7 +836,7 @@
         },
         {
             "nombre": "Planta Lechera 'mantaro' De La Universidad Peruana Los Andes",
-            "categoria": "Realizaciones Tecnicas, Cientificas Y Artististicas Contemporaneas",
+            "categoria": "Realizaciones Contemporaneas",
             "ubicacion": {
                 "provincia": "Concepci\u00f3n",
                 "distrito": "Concepci\u00f3n"
@@ -851,7 +851,7 @@
         },
         {
             "nombre": "Pueblo Historico De Concepcion",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Concepci\u00f3n",
                 "distrito": "Concepci\u00f3n"
@@ -866,7 +866,7 @@
         },
         {
             "nombre": "Puente Las Balsas 'hero\u00ednas Toledo'",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Concepci\u00f3n",
                 "distrito": "Concepci\u00f3n"
@@ -881,7 +881,7 @@
         },
         {
             "nombre": "Centro Piscicola El Ingenio",
-            "categoria": "Realizaciones Tecnicas, Cientificas Y Artististicas Contemporaneas",
+            "categoria": "Realizaciones Contemporaneas",
             "ubicacion": {
                 "provincia": "Concepci\u00f3n",
                 "distrito": "Ingenio"
@@ -971,7 +971,7 @@
         },
         {
             "nombre": "Iglesia Matriz De Mito",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Concepci\u00f3n",
                 "distrito": "Mito"
@@ -986,7 +986,7 @@
         },
         {
             "nombre": "Pueblo Tradicional De Mito",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Concepci\u00f3n",
                 "distrito": "Mito"
@@ -1016,7 +1016,7 @@
         },
         {
             "nombre": "Pueblo Tradicional De Orcotuna",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Concepci\u00f3n",
                 "distrito": "Orcotuna"
@@ -1031,7 +1031,7 @@
         },
         {
             "nombre": "Parque Recreacional La Huaycha",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Concepci\u00f3n",
                 "distrito": "Orcotuna"
@@ -1046,7 +1046,7 @@
         },
         {
             "nombre": "Santuario De La Virgen De Cocharcas",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Concepci\u00f3n",
                 "distrito": "Orcotuna"
@@ -1061,7 +1061,7 @@
         },
         {
             "nombre": "Convento De Santa Rosa De Ocopa",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Concepci\u00f3n",
                 "distrito": "Santa Rosa de Ocopa"
@@ -1091,7 +1091,7 @@
         },
         {
             "nombre": "Iglesia Matriz De Santa Rosa De Ocopa",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Concepci\u00f3n",
                 "distrito": "Santa Rosa de Ocopa"
@@ -1106,7 +1106,7 @@
         },
         {
             "nombre": "Restos Arqueologicos De Ocupi",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Concepci\u00f3n",
                 "distrito": "Santa Rosa de Ocopa"
@@ -1136,7 +1136,7 @@
         },
         {
             "nombre": "Plaza Principal De Ahuac",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Chupaca",
                 "distrito": "Ahuac"
@@ -1151,7 +1151,7 @@
         },
         {
             "nombre": "Manantial Virgen De Cocharcas De Matapuquio",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Chupaca",
                 "distrito": "Ahuac"
@@ -1166,7 +1166,7 @@
         },
         {
             "nombre": "Sitio Arqueologico De Arwaturo",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Chupaca",
                 "distrito": "Ahuac"
@@ -1181,7 +1181,7 @@
         },
         {
             "nombre": "Capilla El Copon",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Chupaca",
                 "distrito": "Chongos Bajo"
@@ -1196,7 +1196,7 @@
         },
         {
             "nombre": "Iglesia Matriz De Chongos Bajo",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Chupaca",
                 "distrito": "Chongos Bajo"
@@ -1211,7 +1211,7 @@
         },
         {
             "nombre": "Santiago Leon De Chongos Bajo",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Chupaca",
                 "distrito": "Chongos Bajo"
@@ -1226,7 +1226,7 @@
         },
         {
             "nombre": "Santuario De Cani Cruz",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Chupaca",
                 "distrito": "Chongos Bajo"
@@ -1271,7 +1271,7 @@
         },
         {
             "nombre": "Iglesia Matriz De San Juan Bautista De Chupaca",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Chupaca",
                 "distrito": "Chupaca"
@@ -1301,7 +1301,7 @@
         },
         {
             "nombre": "Mirador Los Shapis",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Chupaca",
                 "distrito": "Chupaca"
@@ -1316,7 +1316,7 @@
         },
         {
             "nombre": "Plaza Independencia - Chupaca",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Chupaca",
                 "distrito": "Chupaca"
@@ -1451,7 +1451,7 @@
         },
         {
             "nombre": "Centro Arqueologico De Cori Vinchos",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Jauja",
                 "distrito": "Canchayllo"
@@ -1481,7 +1481,7 @@
         },
         {
             "nombre": "Pinturas Rupestres De Helenapuquio",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Jauja",
                 "distrito": "Canchayllo"
@@ -1526,7 +1526,7 @@
         },
         {
             "nombre": "Capilla Cristo Pobre",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Jauja",
                 "distrito": "Jauja"
@@ -1541,7 +1541,7 @@
         },
         {
             "nombre": "Iglesia Matriz De Jauja",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Jauja",
                 "distrito": "Jauja"
@@ -1556,7 +1556,7 @@
         },
         {
             "nombre": "Pueblo Historico De Jauja",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Jauja",
                 "distrito": "Jauja"
@@ -1571,7 +1571,7 @@
         },
         {
             "nombre": "Centro Arqueologico De Huajlasmarca",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Jauja",
                 "distrito": "Llocllapampa"
@@ -1631,7 +1631,7 @@
         },
         {
             "nombre": "Hatunmarca O Hatun Malca",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Jauja",
                 "distrito": "Marco"
@@ -1646,7 +1646,7 @@
         },
         {
             "nombre": "Centro Arqueologico De Pueblo Viejo",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Jauja",
                 "distrito": "Pancan"
@@ -1676,7 +1676,7 @@
         },
         {
             "nombre": "Pueblo De Monobamba",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Jauja",
                 "distrito": "Monobamba"
@@ -1691,7 +1691,7 @@
         },
         {
             "nombre": "Centro Arqueologico De Siquillapucara O Tunanmarca",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Jauja",
                 "distrito": "Tunanmarca"
@@ -1721,7 +1721,7 @@
         },
         {
             "nombre": "Lugar Paleontologico De Pucutanja",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Jauja",
                 "distrito": "Parco"
@@ -1781,7 +1781,7 @@
         },
         {
             "nombre": "Piscigranja Pachacayo De La Sais Tupac Amaru",
-            "categoria": "Realizaciones Tecnicas, Cientificas Y Artististicas Contemporaneas",
+            "categoria": "Realizaciones Contemporaneas",
             "ubicacion": {
                 "provincia": "Jauja",
                 "distrito": "Canchayllo"
@@ -1796,7 +1796,7 @@
         },
         {
             "nombre": "Piscigranja Vinchos De La Sais Tipac Amaru.",
-            "categoria": "Realizaciones Tecnicas, Cientificas Y Artististicas Contemporaneas",
+            "categoria": "Realizaciones Contemporaneas",
             "ubicacion": {
                 "provincia": "Jauja",
                 "distrito": "Canchayllo"
@@ -1811,7 +1811,7 @@
         },
         {
             "nombre": "Sais Tipac Amaru De Pachacayo",
-            "categoria": "Realizaciones Tecnicas, Cientificas Y Artististicas Contemporaneas",
+            "categoria": "Realizaciones Contemporaneas",
             "ubicacion": {
                 "provincia": "Jauja",
                 "distrito": "Canchayllo"
@@ -1826,7 +1826,7 @@
         },
         {
             "nombre": "Sitio Arqueologico De Coto Coto",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Jauja",
                 "distrito": "Canchayllo"
@@ -1841,7 +1841,7 @@
         },
         {
             "nombre": "Sitio Arqueologico De Umpamalca",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Jauja",
                 "distrito": "Marco"
@@ -1856,7 +1856,7 @@
         },
         {
             "nombre": "Sitio Arqueologico De Aupa - Casa Blanca",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Jauja",
                 "distrito": "Llocllapampa"
@@ -1886,7 +1886,7 @@
         },
         {
             "nombre": "Cuartel General De Simon Bolivar",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Jun\u00edn",
                 "distrito": "Jun\u00edn"
@@ -1901,7 +1901,7 @@
         },
         {
             "nombre": "Iglesia Matriz San Ignacio De Loyola",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Jun\u00edn",
                 "distrito": "Jun\u00edn"
@@ -1916,7 +1916,7 @@
         },
         {
             "nombre": "Monumento A Los Vencedores De Junin",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Jun\u00edn",
                 "distrito": "Jun\u00edn"
@@ -1931,7 +1931,7 @@
         },
         {
             "nombre": "Plaza Simon Bolivar",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Jun\u00edn",
                 "distrito": "Jun\u00edn"
@@ -1961,7 +1961,7 @@
         },
         {
             "nombre": "Sitio Arqueologico De Chacamarca",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Jun\u00edn",
                 "distrito": "Jun\u00edn"
@@ -1976,7 +1976,7 @@
         },
         {
             "nombre": "Iglesia De San Pedro De Pari",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Jun\u00edn",
                 "distrito": "Ondores"
@@ -2021,7 +2021,7 @@
         },
         {
             "nombre": "Casa Hacienda La Florida",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Tarma",
                 "distrito": "Acobamba"
@@ -2036,7 +2036,7 @@
         },
         {
             "nombre": "Pueblo Tradicional Acobamba",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Tarma",
                 "distrito": "Acobamba"
@@ -2051,7 +2051,7 @@
         },
         {
             "nombre": "Santuario Del Senor De Muruhuay",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Tarma",
                 "distrito": "Acobamba"
@@ -2081,7 +2081,7 @@
         },
         {
             "nombre": "Pueblo Artesanal De San Pedro De Cajas",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Tarma",
                 "distrito": "San Pedro Cajas"
@@ -2096,7 +2096,7 @@
         },
         {
             "nombre": "Sitio Arqueologico De Cachipozo",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Tarma",
                 "distrito": "San Pedro Cajas"
@@ -2111,7 +2111,7 @@
         },
         {
             "nombre": "Andeneras De Vicora Anta",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Tarma",
                 "distrito": "Tarma"
@@ -2126,7 +2126,7 @@
         },
         {
             "nombre": "Catedral De Santa Ana De Tarma",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Tarma",
                 "distrito": "Tarma"
@@ -2141,7 +2141,7 @@
         },
         {
             "nombre": "Complejo Arqueologico De Tarmatambo",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Tarma",
                 "distrito": "Tarma"
@@ -2156,7 +2156,7 @@
         },
         {
             "nombre": "Casa Hacienda Santa Maria",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Tarma",
                 "distrito": "Tarma"
@@ -2186,7 +2186,7 @@
         },
         {
             "nombre": "Plaza De Armas De Tarma",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Tarma",
                 "distrito": "Tarma"
@@ -2201,7 +2201,7 @@
         },
         {
             "nombre": "Pueblo De Tarmatambo",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Tarma",
                 "distrito": "Tarma"
@@ -2276,7 +2276,7 @@
         },
         {
             "nombre": "Mirador Cruz De Chanchamayo",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Chanchamayo",
                 "distrito": "Chanchamayo"
@@ -2291,7 +2291,7 @@
         },
         {
             "nombre": "Plaza Principal De La Ciudad De La Merced",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Chanchamayo",
                 "distrito": "Chanchamayo"
@@ -2306,7 +2306,7 @@
         },
         {
             "nombre": "Puente Colgante Kimiri",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Chanchamayo",
                 "distrito": "Chanchamayo"
@@ -2321,7 +2321,7 @@
         },
         {
             "nombre": "Puente Raither",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Chanchamayo",
                 "distrito": "Chanchamayo"
@@ -2456,7 +2456,7 @@
         },
         {
             "nombre": "Jardin Botanico El Perezozo",
-            "categoria": "Realizaciones Tecnicas, Cientificas Y Artististicas Contemporaneas",
+            "categoria": "Realizaciones Contemporaneas",
             "ubicacion": {
                 "provincia": "Chanchamayo",
                 "distrito": "San Luis nde Shuaro"
@@ -2471,7 +2471,7 @@
         },
         {
             "nombre": "Casa Hacienda El Naranjal",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Chanchamayo",
                 "distrito": "San Ram\u00f3n"
@@ -2516,7 +2516,7 @@
         },
         {
             "nombre": "Orquideario Las Delicias",
-            "categoria": "Realizaciones Tecnicas, Cientificas Y Artististicas Contemporaneas",
+            "categoria": "Realizaciones Contemporaneas",
             "ubicacion": {
                 "provincia": "Chanchamayo",
                 "distrito": "San Ram\u00f3n"
@@ -2546,7 +2546,7 @@
         },
         {
             "nombre": "Vitoc Y La Nativa Dormida",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Chanchamayo",
                 "distrito": "Vitoc"
@@ -2741,7 +2741,7 @@
         },
         {
             "nombre": "Iglesia San Francisco De Asis",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Satipo",
                 "distrito": "Satipo"
@@ -2756,7 +2756,7 @@
         },
         {
             "nombre": "Mirador Cerro Satelite",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Satipo",
                 "distrito": "Satipo"
@@ -2771,7 +2771,7 @@
         },
         {
             "nombre": "Museo Callegari",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Satipo",
                 "distrito": "Satipo"
@@ -2786,7 +2786,7 @@
         },
         {
             "nombre": "Petroglifos De Huanacaure",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Satipo",
                 "distrito": "Satipo"
@@ -2801,7 +2801,7 @@
         },
         {
             "nombre": "Petroglifos De Paratushiali",
-            "categoria": "Manifestaciones Culturales",
+            "categoria": "Sitios Culturales",
             "ubicacion": {
                 "provincia": "Satipo",
                 "distrito": "Satipo"
