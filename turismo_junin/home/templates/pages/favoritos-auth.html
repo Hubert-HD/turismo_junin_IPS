@@ -79,8 +79,8 @@
         cardGalery = document.querySelector(".favoritos__resultado__galeria");
         cardsHTML = "";
         for (let i = (page - 1)*limiteCardsPage; i < dataCard.length && i < (page)*limiteCardsPage; i++) {
-          let {link, nombre, provincia, categoria, corazon} = dataCard[i];
-          cardsHTML += generarCardHTML(link, nombre, provincia, categoria, corazon.contador, corazon.marcado);
+          let {image, nombre, provincia, categoria, corazon} = dataCard[i];
+          cardsHTML += generarCardHTML(image, nombre, provincia, categoria, corazon.contador, corazon.marcado);
         }
         cardGalery.innerHTML = cardsHTML;
       }

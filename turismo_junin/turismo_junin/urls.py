@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth.views import LogoutView
-from home.views import homeView, destinoView, getDistritos, getDestinos, lugarTuristicoView, favoritosView, getCoordenadas, getRecomendaciones, getRecursos, addFavoritos
+from home.views import homeView, destinoView, getDistritos, getDestinos, lugarTuristicoView, favoritosView, getCoordenadas, getRecomendaciones, getRecursos, addFavoritos, addComentario, getCalificacion, updateCalificacion, borrarComentario, getComentarios
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,9 +27,15 @@ urlpatterns = [
     path('api/distritos/', getDistritos, name='api_distritos'),
     path('api/destinos/', getDestinos),
     path('api/coordenadas/', getCoordenadas),
+    path('api/calificacion/', getCalificacion),
     path('api/recomendaciones/', getRecomendaciones),
     path('api/favoritos/', getRecursos),
     path('api/add/', addFavoritos),
+    path('api/get/comentario/', getComentarios),
+    path('api/add/comentario/', addComentario),
+    path('api/delete/comentario/', borrarComentario),
+    path('api/update/calificacion/', updateCalificacion),
     path('accounts/', include('allauth.urls')),
     path('logout', LogoutView.as_view(), name="logout"),
+    
 ]

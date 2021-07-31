@@ -51,3 +51,20 @@ class Favorito(models.Model):
     usuario_id = models.ForeignKey(SocialAccount, on_delete=models.CASCADE, blank=False, null=False)
     recurso_id = models.ForeignKey(Recurso, related_name="favoritos", on_delete=models.CASCADE, blank=False, null=False)
     is_active = BooleanField()
+
+class Calificacion(models.Model):
+    id = models.AutoField(primary_key = True)
+    criterio1 = models.IntegerField(default = 0, blank=False, null=False)
+    criterio2 = models.IntegerField(default = 0, blank=False, null=False)
+    criterio3 = models.IntegerField(default = 0, blank=False, null=False)
+    criterio4 = models.IntegerField(default = 0, blank=False, null=False)
+    criterio5 = models.IntegerField(default = 0, blank=False, null=False)
+    usuario_id = models.ForeignKey(SocialAccount, on_delete=models.CASCADE, blank=False, null=False)
+    recurso_id = models.ForeignKey(Recurso, on_delete=models.CASCADE, blank=False, null=False)
+
+class Comentario(models.Model):
+    id = models.AutoField(primary_key = True)
+    fecha = models.DateTimeField(auto_now_add=True)
+    descripcion = models.TextField(max_length=1000, blank=True, null=True)
+    usuario_id = models.ForeignKey(SocialAccount, on_delete=models.CASCADE, blank=False, null=False)
+    recurso_id = models.ForeignKey(Recurso, on_delete=models.CASCADE, blank=False, null=False)
