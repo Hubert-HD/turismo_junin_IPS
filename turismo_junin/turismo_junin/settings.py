@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    'parler',
 ]
 
 SITE_ID = 1
@@ -161,3 +162,16 @@ AUTHENTICATION_BACKENDS = [
 
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
+
+PARLER_LANGUAGES = {
+    SITE_ID: (
+        {'code': 'es', },
+        {'code': 'en-us', },
+    ),
+    'default': {
+        'fallback': 'es',
+        'hide_untranslated': False,
+    }
+}
+
+PARLER_SHOW_EXCLUDED_LANGUAGE_TABS = True

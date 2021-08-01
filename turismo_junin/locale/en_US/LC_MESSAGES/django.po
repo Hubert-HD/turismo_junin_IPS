@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-01 10:42-0500\n"
+"POT-Creation-Date: 2021-08-01 12:31-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,9 +17,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: home/models.py:27
+msgid "Nombre Categoría"
+msgstr ""
+
+#: home/models.py:32
+msgid "Categoría"
+msgstr ""
+
+#: home/models.py:33
+msgid "Categorías"
+msgstr ""
+
 #: home/templates/pages/home.html:70
 msgid "¡Bienvenido a nuestro sitio!"
-msgstr "Wlecome"
+msgstr "Welcome to our site!"
 
 #: home/templates/pages/home.html:72
 #, python-format
@@ -31,10 +43,14 @@ msgstr ""
 msgid "%(card.categoria)s"
 msgstr ""
 
-#: turismo_junin/settings.py:132
-msgid "Español"
+#: home/templates/util/change_language.html:2
+msgid "Cambiar lenguaje"
 msgstr ""
 
 #: turismo_junin/settings.py:133
+msgid "Español"
+msgstr ""
+
+#: turismo_junin/settings.py:134
 msgid "English"
 msgstr ""

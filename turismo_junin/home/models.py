@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models.fields import BooleanField
 from django.utils.translation import ugettext_lazy as _
+from parler.models import TranslatableModel, TranslatedFields
 
 from allauth.socialaccount.models import SocialAccount
 
@@ -20,10 +21,16 @@ class Distrito(models.Model):
     def __str__(self):
         return self.nombre
 
-class Categoria(models.Model):
+class Categoria(TranslatableModel):
     id = models.AutoField(primary_key = True)
-    nombre = models.CharField(max_length=255, blank=False, null=False)
+    translations = TranslatedFields(
+        nombre = models.CharField(max_length=255, blank=False, null=False, verbose_name=_('Nombre Categoría'))
+    )
     tipo = BooleanField()
+
+    class Meta:
+        verbose_name = _('Categoría')
+        verbose_name_plural = _('Categorías')
 
     def __str__(self):
         return self.nombre
