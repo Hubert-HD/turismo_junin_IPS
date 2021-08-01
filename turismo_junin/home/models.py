@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models.fields import BooleanField
+from django.utils.translation import ugettext_lazy as _
 
 from allauth.socialaccount.models import SocialAccount
 

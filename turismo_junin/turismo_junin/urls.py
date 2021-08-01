@@ -19,6 +19,8 @@ from django.contrib.auth.views import LogoutView
 from home.views import homeView, destinoView, getDistritos, getDestinos, lugarTuristicoView, favoritosView, getCoordenadas, getRecomendaciones, getRecursos, addFavoritos, addComentario, getCalificacion, updateCalificacion, borrarComentario, getComentarios, culturaView
 
 urlpatterns = [
+    path('i18n/', include('django.conf.urls.i18n')),
+    path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
     path('', homeView, name='home'),
     path('destinos/', destinoView, name='destinos'),
@@ -36,7 +38,6 @@ urlpatterns = [
     path('api/add/comentario/', addComentario),
     path('api/delete/comentario/', borrarComentario),
     path('api/update/calificacion/', updateCalificacion),
-    path('accounts/', include('allauth.urls')),
     path('logout', LogoutView.as_view(), name="logout"),
     
 ]

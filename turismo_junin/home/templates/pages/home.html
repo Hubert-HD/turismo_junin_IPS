@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
 
 {% block title %}Pagina principal{% endblock %}
@@ -66,6 +67,12 @@
   </div>
 </div>
 
+<h1>{% trans '¡Bienvenido a nuestro sitio!' %}</h1>
+<p>
+  {% blocktrans trimmed %}
+      Conoce nuestro servicio del mes {{ recomendados  }}
+  {% endblocktrans %}
+</p>
 <p class="titulo">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 <p class="subtitulo">Quisque nec leo et eros venenatis.Curabitur ac mauris in leo fermentum</p>
 
@@ -141,7 +148,7 @@
         <div class="card__descripcion">
           <div class="etiqueta">
             <span class="etiqueta__icono"><i class="fas fa-tag"></i></span>
-            <span class="etiqueta__clase">{{ card.categoria }}</span>
+            <span class="etiqueta__clase">{% blocktrans trimmed %}{{ card.categoria }}{% endblocktrans %}</span>
           </div>
             <div class="corazon {% if card.corazon.marcado %} corazon--active {% else %} corazon--desactive {% endif %}">
             <span class="corazon__icon" onclick="addFavoritos(event, '{{ card.nombre }}')"><i class="fas fa-heart"></i><i class="far fa-heart"></i></span>

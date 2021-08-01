@@ -2,6 +2,7 @@ import math
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.db.models import Count, Avg
+from django.utils.translation import ugettext as _
 
 from allauth.socialaccount.models import SocialAccount
 from .models import Provincia, Categoria, Distrito, Recurso, Coordenada, Favorito, Comentario, Calificacion
