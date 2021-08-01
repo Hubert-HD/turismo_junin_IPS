@@ -98,6 +98,43 @@ def destinoView(request):
   context = contextAddUser(request, context)
   return render(request, 'pages/destinos.html', context)
 
+def culturaView(request):
+  provincias = Provincia.objects.all()
+  categoriasTangibles = Categoria.objects.filter(tipo=False)
+  recomendados = {}
+  if request.user.is_authenticated:
+    user = SocialAccount.objects.get(user=request.user)
+    for categoria in categoriasTangibles:
+      categoriaNombre = categoria.nombre
+      recomendados[categoriaNombre] = []
+      for recurso in Recurso.objects.filter(categoria_id=categoria).order_by("-puntuacion")[:3]:
+        imagen = recurso.image_URL
+        nombre = recurso.nombre
+        provincia = recurso.distrito_id.provincia_id.nombre
+        categoria = recurso.categoria_id.nombre
+        corazones = Favorito.objects.filter(recurso_id=recurso, is_active=True).count()
+        marcado = Favorito.objects.filter(recurso_id=recurso, usuario_id=user, is_active=True).exists()
+        recomendados[categoriaNombre].append(crearCardRecurso(imagen, nombre, provincia, categoria, corazones, marcado))
+  else:
+    for categoria in categoriasTangibles:
+      categoriaNombre = categoria.nombre
+      recomendados[categoriaNombre] = []
+      for recurso in Recurso.objects.filter(categoria_id=categoria).order_by("-puntuacion")[:3]:
+        imagen = recurso.image_URL
+        nombre = recurso.nombre
+        provincia = recurso.distrito_id.provincia_id.nombre
+        categoria = recurso.categoria_id.nombre
+        corazones = Favorito.objects.filter(recurso_id=recurso, is_active=True).count()
+        marcado = False
+        recomendados[categoriaNombre].append(crearCardRecurso(imagen, nombre, provincia, categoria, corazones, marcado))
+  context ={
+    "provincias": provincias,
+    "categorias": categoriasTangibles,
+    "recomendados" : recomendados
+  }
+  context = contextAddUser(request, context)
+  return render(request, 'pages/cultura.html', context)
+
 # Envía los datos del lugar turístico que pidió el cliente desde su navegador y los recursos turísticos recomendados que se mostrará en la página respectiva al lugar turístico pedido.
 def lugarTuristicoView(request, nombre):
   if(Recurso.objects.filter(nombre=nombre).exists()):

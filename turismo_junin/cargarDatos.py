@@ -24,7 +24,7 @@ with open('data.json') as file:
   print("Se añadio las provincias")
 
   for categoria in categorias:
-    Categoria.objects.create(nombre=categoria, tipo=True)
+    Categoria.objects.create(nombre=categoria.nombre, tipo=categoria.is_tangible)
   print("Se añadio las categorias")
 
   for recurso in recursos:

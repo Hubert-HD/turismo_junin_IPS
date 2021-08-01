@@ -16,13 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth.views import LogoutView
-from home.views import homeView, destinoView, getDistritos, getDestinos, lugarTuristicoView, favoritosView, getCoordenadas, getRecomendaciones, getRecursos, addFavoritos, addComentario, getCalificacion, updateCalificacion, borrarComentario, getComentarios
+from home.views import homeView, destinoView, getDistritos, getDestinos, lugarTuristicoView, favoritosView, getCoordenadas, getRecomendaciones, getRecursos, addFavoritos, addComentario, getCalificacion, updateCalificacion, borrarComentario, getComentarios, culturaView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homeView, name='home'),
     path('destinos/', destinoView, name='destinos'),
     path('destinos/<str:nombre>/', lugarTuristicoView),
+    path('cultura/', culturaView, name='cultura'),
     path('mis-favoritos/', favoritosView, name='favoritos'),
     path('api/distritos/', getDistritos, name='api_distritos'),
     path('api/destinos/', getDestinos),

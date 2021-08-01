@@ -1,10 +1,25 @@
 {
     "categorias": [
-        "Sitios Naturales",
-        "Sitios Culturales",
-        "Acontecimientos y Eventos",
-        "Realizaciones Contemporaneas",
-        "Folclore"
+        {
+            "nombre": "Sitios Naturales",
+            "is_tangible": true
+        },
+        {
+            "nombre": "Sitios Culturales",
+            "is_tangible": true
+        },
+        {
+            "nombre": "Acontecimientos y Eventos",
+            "is_tangible": false
+        },
+        {
+            "nombre": "Realizaciones Contemporaneas",
+            "is_tangible": true
+        },
+        {
+            "nombre": "Folclore",
+            "is_tangible": false
+        }
     ],
     "provincias": [
         {

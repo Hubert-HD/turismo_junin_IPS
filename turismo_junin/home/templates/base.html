@@ -24,14 +24,14 @@
         </a>
         <div class="navbar__menu">
           <a class="navbar__menu__enlace{% block enlace_destino %}{% endblock %}" href="{% url 'destinos' %}">Destinos</a>
-          <a class="navbar__menu__enlace{% block enlace_cultura %}{% endblock %}" href=".">Cultura</a>
+          <a class="navbar__menu__enlace{% block enlace_cultura %}{% endblock %}" href="{% url 'cultura' %}">Cultura</a>
           <a class="navbar__menu__enlace{% block enlace_favoritos %}{% endblock %}" href="{% url 'favoritos' %}">Mis favoritos</a>
-          <div class="navbar__menu__buscador">
+          <!-- <div class="navbar__menu__buscador">
             <form action="." class="buscador">
               <input type="text" class="buscador__input buscador__input--focus" placeholder="Buscar">
               <a class="buscador__icon buscador__icon--focus"><i class="fas fa-search"></i></a>              
             </form>
-          </div>
+          </div> -->
           
           <div class="navbar__menu__desplegable">
             <span class="navbar__menu__desplegable__icono">
