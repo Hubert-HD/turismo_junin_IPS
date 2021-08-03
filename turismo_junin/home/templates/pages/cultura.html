@@ -1,60 +1,68 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Cultura{% endblock %}
+{% block title %}{% trans 'Cultura' %}{% endblock %}
 {% block enlace_cultura %} navbar__menu__enlace--active{% endblock %}
 {% block content %}
 
 <div class="slide">
   <img class="slide__fondo" src="{% static 'img/cultura.jpg' %}" alt="cultura.jpg">
-  <h2 class="slide__titulo">Cultura</h2>
-  <h3 class="slide__subtitulo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</h3>
+  <h2 class="slide__titulo">{% trans 'Cultura' %}</h2>
+  <h3 class="slide__subtitulo">{% trans 'Disfruta y vive nuevas experiencias con las festividades, danzas, música y gastronomía de Junín' %}</h3>
 </div>
 
-<div class="filtro--destinos">
-  <div class="filtro--destinos__localizacion">
-    <span class="filtro--destinos__etiqueta">Por localización:</span>
-    <div class="selection">
-      <div class="selection__box">
-        <span id="provincia" class="selection__box__content selection__box__content--void">Provincia</span>
-        <span class="selection__box__icon selection__box__icon--down"><i class="fas fa-angle-down"></i></span>
+<form id="filtro-formulario" class="filtro--destinos">
+  <div class="filtro--selection">
+    <div class="filtro--destinos__localizacion">
+      <span class="filtro--destinos__etiqueta">{% trans 'Por localización:' %}</span>
+      <div class="selection">
+        <div class="selection__box">
+          <span id="provincia" class="selection__box__content selection__box__content--void">{% trans 'Provincia' %}</span>
+          <span class="selection__box__icon selection__box__icon--down"><i class="fas fa-angle-down"></i></span>
+        </div>
+        <div class="selection__option selection__option--close">
+          {% for provincia in provincias %}
+            <div class="selection__option__item" onclick="generarDistritos('{{provincia.id}}')">{{provincia.nombre}}</div>
+          {% endfor %}
+        </div>
       </div>
-      <div class="selection__option selection__option--close">
-        {% for provincia in provincias %}
-          <div class="selection__option__item" onclick="generarDistritos('{{provincia.nombre}}')">{{provincia.nombre}}</div>
-        {% endfor %}
+      <div id="distritoSelection" class="selection selection--disabled">
+        <div class="selection__box">
+          <span id="distrito" class="selection__box__content selection__box__content--void">{% trans 'Distrito' %}</span>
+          <span class="selection__box__icon selection__box__icon--down"><i class="fas fa-angle-down"></i></span>
+        </div>
+        <div id="distritoList" class="selection__option selection__option--close"></div>
       </div>
     </div>
-    <div id="distritoSelection" class="selection selection--disabled">
-      <div class="selection__box">
-        <span id="distrito" class="selection__box__content selection__box__content--void">Distrito</span>
-        <span class="selection__box__icon selection__box__icon--down"><i class="fas fa-angle-down"></i></span>
+    <div class="filtro--destinos__categoria">
+      <span class="filtro--destinos__etiqueta">{% trans 'Por categoria:' %}</span>
+      <div class="selection">
+        <div class="selection__box">
+          <span id="categoria" class="selection__box__content selection__box__content--void">{% trans 'Categoría' %}</span>
+          <span class="selection__box__icon selection__box__icon--down"><i class="fas fa-angle-down"></i></span>
+        </div>
+        <div class="selection__option selection__option--close">
+          {% for categoria in categorias %}
+            <div class="selection__option__item" onclick="categoriaSeleccionada('{{categoria.id}}')">{{categoria.nombre}}</div>
+          {% endfor %}
+        </div>
       </div>
-      <div id="distritoList" class="selection__option selection__option--close"></div>
     </div>
   </div>
-
-  <div class="filtro--destinos__categoria">
-    <span class="filtro--destinos__etiqueta">Por categoria:</span>
-    <div class="selection">
-      <div class="selection__box">
-        <span id="categoria" class="selection__box__content selection__box__content--void">Categoria</span>
-        <span class="selection__box__icon selection__box__icon--down"><i class="fas fa-angle-down"></i></span>
-      </div>
-      <div class="selection__option selection__option--close">
-        {% for categoria in categorias %}
-          <div class="selection__option__item">{{categoria.nombre}}</div>
-        {% endfor %}
-      </div>
-    </div>
+  <input id="provincia-input" type="hidden" name="provincia">
+  <input id="distrito-input" type="hidden" name="distrito">
+  <input id="categoria-input" type="hidden" name="categoria">
+  <div class="filtro--button">
+    <button class="filtro--destinos__button" type="submit" onclick="consultarLugares(event)" style="outline: none; border: 0;">{% trans 'Filtrar' %}</button>
+    <button class="filtro--destinos__button" type="submit" onclick="reiniciar(event)" style="outline: none; border: 0;">{% trans 'Reiniciar' %}</button>
   </div>
-  <a class="filtro--destinos__button" href="javascript:;" onclick="consultarLugares()">Explorar</a>
-</div>
-<p id="error" class="filtro__error">*Complete al menos un campo antes de explorar</p>
+</form>
+<p id="error" class="filtro__error">{% trans '*Complete al menos un campo antes de explorar' %}</p>
 
 <div id="resultadosLugares">
   {% for categoria, categoriaCards in recomendados.items %}
-    <h4 class="recomendados__titulo">{{ categoria }} recomendados</h4>
+    <h4 class="recomendados__titulo">{% blocktranslate %} {{ categoria }} recomendados{% endblocktranslate %}</h4>
     <div class="recomendados">
       <div class="recomendados__galeria">
         {% for card in categoriaCards %}
@@ -73,7 +81,7 @@
                 <span class="corazon__icon" onclick="addFavoritos(event, '{{ card.nombre }}')"><i class="fas fa-heart"></i><i class="far fa-heart"></i></span>
                 <span class="corazon__numero">{{ card.corazon.contador }}</span>
               </div>
-              <a class="flecha" href="/destinos/{{ card.nombre }}/"><i class="fas fa-arrow-right"></i></a>
+              <a class="flecha" href="/recurso-turistico/{{ card.nombre }}/"><i class="fas fa-arrow-right"></i></a>
             </div>
           </div>
         {% endfor %}
@@ -90,21 +98,118 @@
 
 {% block scripts %}
   <script>
+    function generarDistritos(provincia){
+      let selection = document.getElementById("distritoSelection");
+      let content = selection.querySelector(".selection__box__content");
+      let optionList = selection.querySelector(".selection__option");
+      let icon = selection.querySelector(".selection__box__icon");
+      
+      if(content != "Distrito" && document.getElementById("provincia").innerHTML != provincia){
+        if(content.classList.contains("selection__box__content--full")){
+          content.classList.replace("selection__box__content--full", "selection__box__content--void");
+          content.innerHTML = "Distrito";
+        }
+      }
+      if (document.getElementById("provincia-input"))
+        document.getElementById("provincia-input").value = provincia;
+        if (document.getElementById("distrito-input"))
+              document.getElementById("distrito-input").value = "";
+      selection.classList.remove("selection--disabled");
+      fetch(`/api/get/distritos?provincia=${provincia}`)
+      .then(response => response.json())
+      .then(data => {
+        let distritoArray = data;
+        let distritosHTML = "";
+        for (let i = 0; i < distritoArray.length; i++)
+          distritosHTML += '<div class="selection__option__item" pk="' + distritoArray[i].id + '">' + distritoArray[i].nombre + '</div>'
+        document.getElementById("distritoList").innerHTML = distritosHTML;
+
+        let itemArray = document.getElementById("distritoList").querySelectorAll(".selection__option__item");
+        itemArray.forEach((item) => {
+          item.addEventListener("click", (e) => {
+            content.innerHTML = e.currentTarget.innerHTML;
+            if (document.getElementById("distrito-input"))
+              document.getElementById("distrito-input").value = e.currentTarget.getAttribute("pk");
+
+            if(optionList.classList.contains("selection__option--open")){
+              optionList.classList.replace("selection__option--open", "selection__option--close");
+              icon.classList.replace("selection__box__icon--up", "selection__box__icon--down");
+            }
+            if(content.classList.contains("selection__box__content--void")){
+              content.classList.replace("selection__box__content--void", "selection__box__content--full");
+            }
+          });
+        });
+      });
+    }
+
+    function pedirRecomendaciones(resultado){
+      fetch(`/api/get/recomendaciones?provincia=${provincia}&distrito=${distrito}&categoria=${categoria}`)
+        .then(response => response.json())
+        .then(data => {
+          let cards = data;
+          let cardsHTML = "";
+          cards.forEach(({image, nombre, provincia, categoria, corazon}) => {
+            cardsHTML += generarCardHTML(image, nombre, provincia, categoria, corazon.contador, corazon.marcado);
+          });
+          resultadoHTML = `
+          <h4 class="recomendados__titulo">{% trans 'Recomendados para ti' %}</h4>
+          <div class="recomendados">
+            <span class="recomendados__button--izquierda"><i class="fas fa-chevron-left"></i></span>
+            <div class="recomendados__galeria">
+              ${cardsHTML}
+            </div>
+            <span class="recomendados__button--derecha"><i class="fas fa-chevron-right"></i></span>
+          </div>`;
+          resultado.innerHTML = resultadoHTML;
+          activarRecomendaciones();
+        });
+    }
+
+    function categoriaSeleccionada(idCategoria) {
+      document.getElementById("categoria-input").value = idCategoria
+    }
+
     activarAnimacionMenusDesplegables();
+
+    function reiniciar(event) {
+      event.preventDefault();
+      document.getElementById("provincia-input").value = ""
+      document.getElementById("distrito-input").value = ""
+      document.getElementById("categoria-input").value = ""
+
+      document.getElementById("distritoSelection").classList.add("selection--disabled")
+      let provincia = document.getElementById("provincia")
+      let distrito = document.getElementById("distrito")
+      let categoria = document.getElementById("categoria")
+      
+      provincia.innerText = "{% trans 'Provincia' %}";
+      distrito.innerText = "{% trans 'Distrito' %}";
+      categoria.innerText = "{% trans 'Categoría' %}";
+      if(provincia.classList.contains("selection__box__content--full"))
+        provincia.classList.replace("selection__box__content--full", "selection__box__content--void");
+      if(distrito.classList.contains("selection__box__content--full"))
+        distrito.classList.replace("selection__box__content--full", "selection__box__content--void");
+      if(categoria.classList.contains("selection__box__content--full"))
+        categoria.classList.replace("selection__box__content--full", "selection__box__content--void");
+    }
 
     let dataCard = []
     // Obtiene los resultados de la consulta de recursos turisticos y los muestra en el navegador
-    function consultarLugares(){
-      let provincia = document.getElementById("provincia").innerText;
-      let distrito = document.getElementById("distrito").innerText;
-      let categoria = document.getElementById("categoria").innerText;
-      if(provincia == "Provincia" && distrito == "Distrito" && categoria == "Categoria"){
+    function consultarLugares(event){
+      event.preventDefault();
+      provincia = document.getElementById("provincia-input").value
+      distrito = document.getElementById("distrito-input").value
+      categoria = document.getElementById("categoria-input").value
+
+      if(provincia == "" && distrito == "" && categoria == ""){
         document.getElementById("error").style.display = "block";
       }
       else{
         document.getElementById("error").style.display = "none";
         let resultado = document.getElementById("resultadosLugares");
-        fetch(`/api/destinos/?provincia=${provincia}&distrito=${distrito}&categoria=${categoria}`)
+        document.getElementById("resultadosLugares").innerHTML = `<div class="loader_vacio">{% trans 'Cargando...' %}</div>`;
+        fetch(`/api/recursos/intangibles?provincia=${provincia}&distrito=${distrito}&categoria=${categoria}`)
         .then(response => response.json())
         .then(data => {
           dataCard = data;
@@ -113,8 +218,8 @@
             let recomendaciones = document.getElementById("recomendaciones");
             resultadoHTML = `
             <div class="resultados">
-              <h4 class="resultados__titulo">Resultados</h4>
-              <h4 class="resultados__respuesta">No se encontraron coincidencias</h4>
+              <h4 class="resultados__titulo">{% trans 'Resultados' %}</h4>
+              <h4 class="resultados__respuesta">{% trans 'No se encontraron coincidencias' %}</h4>
             </div>`;
             resultado.innerHTML = resultadoHTML;
             pedirRecomendaciones(recomendaciones);
@@ -123,12 +228,12 @@
             let recomendaciones = document.getElementById("recomendaciones");
             let cardsHTML = "";
             recomendaciones.innerHTML = "";
-            data.forEach(({link, nombre, provincia, categoria, corazon}) => {
-              cardsHTML += generarCardHTML(link, nombre, provincia, categoria, corazon.contador, corazon.marcado);
+            data.forEach(({image, nombre, provincia, categoria, corazon}) => {
+              cardsHTML += generarCardHTML(image, nombre, provincia, categoria, corazon.contador, corazon.marcado);
             });
             resultadoHTML += `
             <div class="resultados">
-              <h4 class="resultados__titulo">Resultados</h4>
+              <h4 class="resultados__titulo">{% trans 'Resultados' %}</h4>
               <div class="resultados__galeria">
                 ${cardsHTML}
               </div>

@@ -5,12 +5,15 @@ from .models import Provincia, Distrito, Categoria, Recurso, Coordenada, Favorit
 # Register your models here.
 admin.site.register(Provincia)
 admin.site.register(Distrito)
-admin.site.register(Recurso)
 admin.site.register(Coordenada)
 admin.site.register(Favorito)
 admin.site.register(Comentario)
 admin.site.register(Calificacion)
 
 @admin.register(Categoria)
+class ServiceAdmin(TranslatableAdmin):
+  pass
+
+@admin.register(Recurso)
 class ServiceAdmin(TranslatableAdmin):
   pass
